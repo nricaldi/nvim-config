@@ -6,6 +6,9 @@ vim.call('plug#begin')
 -- Add tree sitter for better syntax highlighting
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 
+-- Signs for added, removed, and changed lines
+Plug('lewis6991/gitsigns.nvim')
+
 vim.call('plug#end')
 
 
@@ -33,3 +36,4 @@ vim.opt.termguicolors = true
 
 require('custom_theme')
 
+require('git_signs')
