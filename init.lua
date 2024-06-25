@@ -15,25 +15,28 @@ vim.call('plug#end')
 -- Tree sitter config
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python" },
-    
+    ensure_installed = { "lua", "vim", "vimdoc", "query", "python" },
+
     -- Automatically install missing parsers when entering buffer
     auto_install = true,
 
     highlight = {
-	enable = true,
-
-	additional_vim_regex_highlighting = false,
+        enable = true,
+        additional_vim_regex_highlighting = false,
     },
 }
 
--- Base config
-vim.o.number = true
-vim.o.syntax = "on"
-vim.o.shiftwidth = 4
 
+-- Base config
+vim.opt.number = true
+vim.opt.syntax = "on"
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars:append("space:.")
+vim.opt.listchars:append("tab:->")
+vim.opt.signcolumn = "yes"
 
 require('custom_theme')
-
 require('git_signs')
