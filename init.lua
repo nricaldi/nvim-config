@@ -9,6 +9,13 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 -- Signs for added, removed, and changed lines
 Plug('lewis6991/gitsigns.nvim')
 
+-- Dependancies for telescope
+Plug('nvim-lua/plenary.nvim') -- required
+Plug('BurntSushi/ripgrep') -- required for grep
+
+-- Fuzzy finding files + file grep
+Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x'})
+
 vim.call('plug#end')
 
 
