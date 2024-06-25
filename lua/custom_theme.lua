@@ -50,6 +50,24 @@ local terminal_colors = {
 --  vim.g["terminal_color_" .. tostring(idx)] = color
 -- end
 
+local colors = {
+  poggers = "#7480c2",
+  background = "#11111b",
+  shade = "#1e1e2e",
+  comment = "#486499",
+  delimiter = "#6c7086",
+  foreground_dark = "#313244",
+  foreground = "#585b70",
+  text = "#cdd6f4",
+  lavender = "#b4befe",
+  blue = "#89b4fa",
+  green = "#a6e3a1",
+  yellow = "#f9e2af",
+  orange = "#fab387",
+  red = "#f38ba8",
+  purple = "#cba6f7",
+}
+
 local highlight_groups = {
   -- editor
   ["ColorColumn"] = { bg = colors.shade },
@@ -88,7 +106,7 @@ local highlight_groups = {
   ["MatchParen"] = { bg = colors.foreground },
   ["ModeMsg"] = { fg = colors.poggers, italic = true },
   ["MsgSeparator"] = { bg = colors.foreground },
-  ["Normal"] = { bg = colors.background, fg = colors.text },
+  ["Normal"] = { fg = colors.text },
   ["NormalFloat"] = { bg = "NONE" },
   ["FloatBoarder"] = { bg = "NONE" },
   ["FloatTitle"] = { bg = "NONE" },
