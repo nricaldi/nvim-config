@@ -7,24 +7,6 @@
 vim.cmd.source("$VIMRUNTIME/colors/default.vim")
 vim.g.colors_name = "dawn"
 
-local colors = {
-  poggers = "#7480c2",
-  background = "#11111b",
-  shade = "#1e1e2e",
-  comment = "#3c5e7f",
-  delimiter = "#6c7086",
-  foreground_dark = "#313244",
-  foreground = "#585b70",
-  text = "#cdd6f4",
-  lavender = "#b4befe",
-  blue = "#89b4fa",
-  green = "#a6e3a1",
-  yellow = "#f9e2af",
-  orange = "#fab387",
-  red = "#f38ba8",
-  purple = "#cba6f7",
-}
-
 -- unmodified catppuccin to match my terminal theme:
 -- https://github.com/catppuccin/base16/blob/99aa911b29c9c7972f7e1d868b6242507efd508c/base16/mocha.yaml
 local terminal_colors = {
@@ -53,10 +35,10 @@ local terminal_colors = {
 local colors = {
   poggers = "#7480c2",
   background = "#11111b",
-  shade = "#1e1e2e",
+  shade = "#4c4c75",
   comment = "#486499",
   delimiter = "#6c7086",
-  foreground_dark = "#313244",
+  foreground_dark = "#474760",
   foreground = "#585b70",
   text = "#cdd6f4",
   lavender = "#b4befe",
