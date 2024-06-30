@@ -7,36 +7,11 @@
 vim.cmd.source("$VIMRUNTIME/colors/default.vim")
 vim.g.colors_name = "dawn"
 
--- unmodified catppuccin to match my terminal theme:
--- https://github.com/catppuccin/base16/blob/99aa911b29c9c7972f7e1d868b6242507efd508c/base16/mocha.yaml
-local terminal_colors = {
-  [0] = "1e1e2e", -- base
-  [1] = "181825", -- mantle
-  [2] = "313244", -- surface0
-  [3] = "45475a", -- surface1
-  [4] = "585b70", -- surface2
-  [5] = "cdd6f4", -- text
-  [6] = "f5e0dc", -- rosewater
-  [7] = "b4befe", -- lavender
-  [8] = "f38ba8", -- red
-  [9] = "fab387", -- peach
-  [10] = "f9e2af", -- yellow
-  [11] = "a6e3a1", -- green
-  [12] = "94e2d5", -- teal
-  [13] = "89b4fa", -- blue
-  [14] = "cba6f7", -- mauve
-  [15] = "f2cdcd", -- flamingo
-}
-
--- for idx, color in pairs(terminal_colors) do
---  vim.g["terminal_color_" .. tostring(idx)] = color
--- end
-
 local colors = {
   poggers = "#7480c2",
   background = "#11111b",
   shade = "#4c4c75",
-  comment = "#486499",
+  comment = "#a93a5d",
   delimiter = "#6c7086",
   foreground_dark = "#474760",
   foreground = "#585b70",
@@ -193,5 +168,24 @@ local highlight_groups = {
 }
 
 for group, attributes in pairs(highlight_groups) do
+  vim.api.nvim_set_hl(0, group, attributes)
+end
+
+
+local lsp_highlight_groups = {
+  ["LspReferenceText"] = { link = "CursorLine" },
+  ["LspReferenceRead"] = { link = "CursorLine" },
+  ["LspReferenceWrite"] = { link = "CursorLine" },
+  ["LspDiagnosticsDefaultError"] = { fg = colors.red },
+  ["LspDiagnosticsDefaultWarning"] = { fg = colors.yellow },
+  ["LspDiagnosticsDefaultInformation"] = { fg = colors.green },
+  ["LspDiagnosticsDefaultHint"] = { fg = colors.blue },
+  ["LspDiagnosticsUnderlineError"] = { undercurl = true, sp = colors.red },
+  ["LspDiagnosticsUnderlineWarning"] = { undercurl = true, sp = colors.yellow },
+  ["LspDiagnosticsUnderlineInformation"] = { undercurl = true, sp = colors.green },
+  ["LspDiagnosticsUnderlineHint"] = { undercurl = true, sp = colors.blue },
+}
+
+for group, attributes in pairs(lsp_highlight_groups) do
   vim.api.nvim_set_hl(0, group, attributes)
 end

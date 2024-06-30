@@ -9,6 +9,11 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 -- Signs for added, removed, and changed lines
 Plug('lewis6991/gitsigns.nvim')
 
+-- LSP config
+Plug('williamboman/mason.nvim')
+Plug('williamboman/mason-lspconfig.nvim')
+Plug('neovim/nvim-lspconfig')
+
 -- Dependancies for telescope
 Plug('nvim-lua/plenary.nvim') -- required
 Plug('BurntSushi/ripgrep') -- required for grep
@@ -16,20 +21,25 @@ Plug('BurntSushi/ripgrep') -- required for grep
 -- Fuzzy finding files + file grep
 Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x'})
 
+-- Fancy status line
+Plug('nvim-lualine/lualine.nvim')
+
+-- Fancy file icons
+Plug('nvim-tree/nvim-web-devicons')
+
+-- Adds small bg color on hex codes
+Plug('norcalli/nvim-colorizer.lua')
+
 vim.call('plug#end')
 
 
--- Base config
-vim.opt.number = true
-vim.opt.syntax = "on"
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.termguicolors = true
-vim.opt.list = true
-vim.opt.listchars:append("space:.")
-vim.opt.listchars:append("tab:->")
-vim.opt.signcolumn = "yes"
+require('nvim_options')
+require('nvim_theme')
 
-require('custom_theme')
-require('git_signs')
-require('tree_sitter')
+-- Importing config files
+require('plugins.colorizer')
+require('plugins.git_signs')
+require('plugins.lsp_config')
+require('plugins.lualine')
+require('plugins.telescope')
+require('plugins.tree_sitter')
