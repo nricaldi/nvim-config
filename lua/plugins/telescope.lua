@@ -1,6 +1,9 @@
 
 require('telescope').setup{
   defaults = {
+    file_ignore_patterns = {
+      "venv"
+    },
     -- Default configuration for telescope goes here:
     -- config_key = value,
     mappings = {
