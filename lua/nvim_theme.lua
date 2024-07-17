@@ -1,28 +1,30 @@
---- Name:        dawn
---- Description: The best colorscheme there is... but modified by Nicolas Ricaldi
---- Author:      AlphaKeks <alphakeks@dawn.sh>
---- License:     GPL 3.0
+--- Name:        Blood
+--- Description: For those who love the color red
+--- Author:      Nicolas Ricaldi
 
--- vim.opt.background = "dark"
+vim.opt.background = "dark"
 vim.cmd.source("$VIMRUNTIME/colors/default.vim")
-vim.g.colors_name = "dawn"
+vim.g.colors_name = "blood"
 
 local colors = {
   poggers = "#7480c2",
-  background = "#11111b",
+  background = "#230000",
   shade = "#4c4c75",
-  comment = "#a93a5d",
+  comment = "#a85670",
   delimiter = "#6c7086",
   foreground_dark = "#474760",
   foreground = "#585b70",
-  text = "#cdd6f4",
-  lavender = "#b4befe",
-  blue = "#89b4fa",
-  green = "#a6e3a1",
+  text = "#F5EFED",
+  lavender = "#D7C1CC",
+  blue = "#3F88C5",
+  green = "#A6E381",
   yellow = "#f9e2af",
   orange = "#fab387",
-  red = "#f38ba8",
-  purple = "#cba6f7",
+  red = "#c74375",
+  purple = "#7B68EE",
+  pink = "#f38ba8",
+  brown = "#C84C09",
+  type = "#3AAFB9"
 }
 
 local highlight_groups = {
@@ -46,8 +48,7 @@ local highlight_groups = {
   ["DiagnosticUnderlineHint"] = { link = "NONE" },
   ["DiagnosticUnderlineOk"] = { link = "NONE" },
   ["Directory"] = { fg = colors.blue },
-  ["DiffAdd"] = { fg = colors.green },
-  ["DiffChange"] = { fg = colors.blue },
+  ["DiffAdd"] = { fg = colors.green }, ["DiffChange"] = { fg = colors.blue },
   ["DiffDelete"] = { fg = colors.red },
   ["DiffText"] = { link = "Normal" },
   ["EndOfBuffer"] = { fg = colors.foreground_dark },
@@ -90,11 +91,11 @@ local highlight_groups = {
 
   -- syntax
   ["Comment"] = { fg = colors.comment, italic = true },
-  ["Constant"] = { fg = colors.text },
+  ["Constant"] = { fg = colors.orange },
   ["String"] = { fg = colors.green },
   ["Character"] = { fg = colors.orange },
-  ["Number"] = { fg = colors.red },
-  ["Boolean"] = { fg = colors.red },
+  ["Number"] = { fg = colors.purple },
+  ["Boolean"] = { fg = colors.purple },
   ["Float"] = { link = "Number" },
   ["Identifier"] = { fg = colors.text },
   ["Function"] = { fg = colors.blue },
@@ -103,15 +104,15 @@ local highlight_groups = {
   ["Repeat"] = { fg = colors.purple },
   ["Label"] = { fg = colors.yellow },
   ["LspInlayHint"] = { link = "Comment" },
-  ["Operator"] = { fg = colors.delimiter },
-  ["Keyword"] = { fg = colors.purple },
+  ["Operator"] = { fg = colors.red },
+  ["Keyword"] = { fg = colors.red },
   ["Exception"] = { fg = colors.purple },
   ["PreProc"] = { fg = colors.comment },
   ["Type"] = { fg = colors.poggers },
   ["StorageClass"] = { fg = colors.yellow },
   ["Structure"] = { link = "Type" },
   ["Typedef"] = { link = "Type" },
-  ["Special"] = { fg = colors.orange },
+  ["Special"] = { fg = colors.purple },
   ["Delimiter"] = { fg = colors.delimiter },
   ["Debug"] = { fg = colors.purple, italic = true },
   ["debugPC"] = { link = "CursorLine" },
@@ -120,13 +121,14 @@ local highlight_groups = {
 
   -- tree-sitter
   ["@variable"] = { link = "Identifier" },
-  ["@variable.builtin"] = { fg = colors.red, italic = true },
-  ["@variable.parameter"] = { link = "@variable", bold = true },
+  ["@variable.builtin"] = { fg = colors.brown, italic = true },
+  ["@variable.parameter"] = { fg = colors.lavender , bold = true },
   ["@variable.parameter.builtin"] = { link = "@variable.builtin" },
   ["@variable.member"] = { fg = colors.lavender },
   ["@module"] = { fg = colors.lavender },
   ["@module.builtin"] = { fg = colors.red },
   ["@string.documentation"] = { link = "@comment.documentation" },
+  ["@type"] = { fg = colors.type },
   ["@type.builtin"] = { link = "@type" },
   ["@type.associated"] = { link = "@type" },
   ["@type.enum"] = { fg = colors.orange },
@@ -140,6 +142,8 @@ local highlight_groups = {
   ["@constructor.lua"] = { link = "@punctuation.bracket" },
   ["@operator.try"] = { fg = colors.purple }, -- custom query for rust's `?`
   ["@keyword.rust.unsafe"] = { fg = colors.red, bold = true },
+  ["@keyword.type"] = { fg = colors.brown },
+  ["@keyword.function"] = { fg = colors.brown },
   ["@storageclass"] = { link = "StorageClass" },
   ["@punctuation.special"] = { link = "@punctuation.bracket" },
   ["@comment.documentation"] = { fg = colors.comment, italic = false },
@@ -157,8 +161,10 @@ local highlight_groups = {
   ["@diff.plus"] = { link = "DiffAdd" },
   ["@diff.minus"] = { link = "DiffDelete" },
   ["@diff.delta"] = { link = "DiffChange" },
-  ["@tag"] = { link = "Delimiter" },
+  ["@tag"] = { fg = colors.red },
   ["@tag.builtin"] = { link = "@tag" },
+  ["@tag.attribute"] = { fg = colors.yellow },
+  ["@tag.delimiter"] = { link = "Delimiter" },
 
   -- telescope
   ["TelescopeMatching"] = { fg = colors.poggers, bold = true },
