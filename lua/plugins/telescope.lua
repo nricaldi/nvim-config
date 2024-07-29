@@ -26,12 +26,19 @@ require('telescope').setup{
   },
   extensions = {
     -- Your extension configuration goes here:
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown {
+        -- even more opts
+      }
+    }
     -- extension_name = {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
   }
 }
+
+require('telescope').load_extension('ui-select')
 
 local builtin = require('telescope.builtin')
 
@@ -47,3 +54,4 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fe', find_env_files, {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+

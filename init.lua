@@ -20,6 +20,7 @@ Plug('BurntSushi/ripgrep') -- required for grep
 
 -- Fuzzy finding files + file grep
 Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x'})
+Plug('nvim-telescope/telescope-ui-select.nvim')
 
 -- Fancy status line
 Plug('nvim-lualine/lualine.nvim')
