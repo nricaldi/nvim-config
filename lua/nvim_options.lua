@@ -1,7 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.syntax = "on"
-vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
@@ -12,6 +11,24 @@ vim.opt.signcolumn = "yes"
 
 vim.g.mapleader = " "
 
+-- Set default shiftwidth to 2
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
+-- Set shiftwidth=4 for Python files
+vim.api.nvim_create_autocmd({"FileType"}, {
+  pattern = {"python", "html"},
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+  end,
+})
+
+-- vim motions to swap between nvim panes
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Show Tree sitter highlight group info
 local function get_ts_highlight_info()
