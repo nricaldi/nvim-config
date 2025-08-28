@@ -12,7 +12,7 @@ Plug('lewis6991/gitsigns.nvim')
 -- LSP config
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
-Plug('neovim/nvim-lspconfig')
+Plug('neovim/nvim-lspconfig') -- required for prettier
 
 -- Dependancies for telescope
 Plug('nvim-lua/plenary.nvim') -- required
@@ -34,6 +34,10 @@ Plug('norcalli/nvim-colorizer.lua')
 -- Adds one tap nav between panes
 Plug('christoomey/vim-tmux-navigator')
 
+-- Adds Prettier
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
+
 vim.call('plug#end')
 
 
@@ -48,3 +52,4 @@ require('plugins.lualine')
 require('plugins.telescope')
 require('plugins.tree_sitter')
 require('plugins.tmux-navigator')
+require('plugins.null_ls')
