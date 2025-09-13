@@ -1,0 +1,37 @@
+# OS cruft
+.DS_Store
+
+# Neovim runtime files (if you store them under the config dir)
+swap/
+backup/
+undo/
+session/
+sessions/
+shada/
+*.swp
+*.swo
+*.sw?
+
+# Logs
+*.log
+log/
+
+# Spell: commit your .add wordlists, ignore compiled binaries
+spell/*.spl
+!spell/*.add
+spell/*.sug
+
+# Plugin managers
+# packer.nvim generates this file – do not commit
+plugin/packer_compiled.lua
+
+# vim-plug bootstrap file (optional — you can fetch on bootstrap)
+# autoload/plug.vim
+
+# lazy.nvim: keep the lockfile for reproducible versions
+# (this line is here just to be explicit — it *unignores* the lockfile if a broader ignore exists)
+!lazy-lock.json
+
+# netrw history if it ends up here
+.netrwhist
+
