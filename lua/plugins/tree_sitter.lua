@@ -1,7 +1,19 @@
 
 -- Tree sitter config
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "lua", "vim", "vimdoc", "query", "python", "html", "css", "javascript", "vue" },
+    ensure_installed = {
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "python",
+      "html",
+      "css",
+      "javascript",
+      "vue",
+      "typescript",
+      "tsx"
+    },
 
     -- Automatically install missing parsers when entering buffer
     auto_install = true,

@@ -35,8 +35,12 @@ Plug('norcalli/nvim-colorizer.lua')
 Plug('christoomey/vim-tmux-navigator')
 
 -- Adds Prettier
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'MunifTanjim/prettier.nvim'
+Plug('nvimtools/none-ls.nvim')
+Plug('MunifTanjim/prettier.nvim')
+
+-- Adds autocomplete
+Plug('saghen/blink.cmp', { ['tag'] = 'v1.7' })
+Plug('rafamadriz/friendly-snippets')
 
 vim.call('plug#end')
 
@@ -51,5 +55,6 @@ require('plugins.lsp_config')
 require('plugins.lualine')
 require('plugins.telescope')
 require('plugins.tree_sitter')
-require('plugins.tmux-navigator')
+require('plugins.tmux_navigator')
 require('plugins.null_ls')
+require('plugins.complete')
