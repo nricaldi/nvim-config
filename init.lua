@@ -42,6 +42,9 @@ Plug('MunifTanjim/prettier.nvim')
 Plug('saghen/blink.cmp', { ['tag'] = 'v1.7' })
 Plug('rafamadriz/friendly-snippets')
 
+-- Adds file editor
+Plug('stevearc/oil.nvim')
+
 vim.call('plug#end')
 
 
@@ -58,3 +61,4 @@ require('plugins.tree_sitter')
 require('plugins.tmux_navigator')
 require('plugins.null_ls')
 require('plugins.complete')
+require('plugins.oil')
