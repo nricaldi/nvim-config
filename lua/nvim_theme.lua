@@ -5,6 +5,8 @@
 vim.opt.background = "dark"
 vim.cmd.source("$VIMRUNTIME/colors/default.vim")
 vim.g.colors_name = "blood"
+vim.opt.pumblend = 0  -- no translucency on popup menu
+vim.opt.winblend = 0  -- no translucency on float windows
 
 local colors = {
   poggers = "#7480c2",
@@ -66,7 +68,7 @@ local highlight_groups = {
   ["MsgSeparator"] = { bg = colors.foreground },
   ["Normal"] = { fg = colors.text },
   ["NormalFloat"] = { bg = "NONE" },
-  ["FloatBoarder"] = { bg = "NONE" },
+  ["FloatBorder"] = { bg = "NONE" },
   ["FloatTitle"] = { bg = "NONE" },
   ["FloatFooter"] = { bg = "NONE" },
   ["Pmenu"] = { bg = colors.shade, fg = colors.foreground },
@@ -171,6 +173,18 @@ local highlight_groups = {
   ["TelescopeNormal"] = { bg = colors.none, fg = colors.text },
   ["TelescopePreviewLine"] = { link = "TelescopeSelection" },
   ["TelescopeSelection"] = { link = "CursorLine" },
+
+  -- menu / popup
+  ["Pmenu"] = { bg = colors.shade, fg = colors.text },
+  ["PmenuSel"] = { bg = colors.poggers, fg = colors.background, bold = true },
+  ["PmenuSbar"] = { bg = colors.shade },
+  ["PmenuThumb"] = { bg = colors.foreground_dark },
+
+  -- cmp autocomplete
+  ["CmpItemAbbr"] = { fg = colors.text },
+  ["CmpItemAbbrMatch"] = { fg = colors.poggers, bold = true },
+  ["CmpItemMenu"] = { fg = colors.delimiter },
+  ["CmpItemKind"] = { fg = colors.type },
 }
 
 for group, attributes in pairs(highlight_groups) do
