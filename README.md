@@ -19,6 +19,10 @@ Personal Neovim config built around lazy.nvim, LSP, and Telescope.
 
 ## Install
 ```sh
+brew install neovim
+
+brew install ripgrep
+
 git clone https://github.com/nricaldi/nvim-config.git ~/.config/nvim
 ```
 
